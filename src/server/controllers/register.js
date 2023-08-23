@@ -1,8 +1,6 @@
-const express = require('express')
-const router = express.Router()
 const schemas = require('../schema/schema')
 
-router.post('/signup', async(req, res) => {
+const registerUser = async (req, res) => {
     const {email, username, password} = req.body
 
     const userData = {email: email, username: username, password: password}
@@ -14,6 +12,8 @@ router.post('/signup', async(req, res) => {
        res.send('New User Created')
     }
     res.end()
-})
+}
 
-module.exports = router ;
+module.exports = {
+    registerUser
+}
