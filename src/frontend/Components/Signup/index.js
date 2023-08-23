@@ -5,45 +5,18 @@ import { useState } from 'react';
 function Signup () {
 
     const [formData, setFormData] = useState({ email: '', username: '', password: '' });
-    const [emailError, setEmailError] = useState('');
-    const [passwordError, setPasswordError] = useState('');
-    const [registrationError, setRegistrationError] = useState('');
+    const [registerCompletion, setRegisterCompletion] = useState('')
 
-    const validateEmail = (email) => {
-        const emailRegex =
-          /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/;
-        return emailRegex.test(email);
-      };
-    
-      const validatePassword = (password) => {
-        const passwordRegex =
-          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-        return passwordRegex.test(password);
-      };
 
-    const onChange = (e) => {
-        const { name, value } = e.target;
-        if (name === 'email') {
-          if (value === '') {
-            setEmailError('Email address is required');
-          } else if (!validateEmail(value)) {
-            setEmailError('Invalid email address');
-          } else {
-            setEmailError('');
-          }
-        } else if (name === 'password') {
-          if (value === '') {
-            setPasswordError('Password is required');
-          } else if (!validatePassword(value)) {
-            setPasswordError(
-              'Password must contain at least eight characters, including at least one capital letter, one number and one special character'
-            );
-          } else {
-            setPasswordError('');
-          }
-        }
-        setFormData({ ...formData, [name]: value });
-      };
+    const handleChange = (e) => {
+        const { value, name } = e.target;
+
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    }
+
 
     return (
     <>
@@ -56,7 +29,7 @@ function Signup () {
                 <div className="flex justify-center">
                     <input 
                         value={formData.email}
-                        onChange={onChange}
+                        onChange={handleChange}
                         aria-label="Enter your email address" 
                         type="email"
                         placeholder="Email address" 
@@ -67,7 +40,7 @@ function Signup () {
                 <div className="flex justify-center">
                     <input 
                         value={formData.username}
-                        onChange={onChange}
+                        onChange={handleChange}
                         aria-label="Enter your Username" 
                         type="username" 
                         placeholder="Username" 
@@ -78,7 +51,7 @@ function Signup () {
                 <div className="flex justify-center">
                     <input 
                         value={formData.username}
-                        onChange={onChange}
+                        onChange={handleChange}
                         aria-label="Enter your password" 
                         type="password" 
                         placeholder="Password"
