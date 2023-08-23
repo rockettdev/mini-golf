@@ -5,7 +5,7 @@ import putterpal from '../../Assets/putterpal.png'
 function Home () {
     return (
     <>
-        <div className="flex flex-wrap justify-center bg-black h-screen">
+        <div className="flex flex-wrap justify-center bg-main-bg bg-cover h-screen">
             <h1 className="flex-row w-screen self-center mt-20">
                 <img className="mx-auto" alt="" src={putterpal} width={320}/>
             </h1>

@@ -6,7 +6,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'custom': ['SlatePro-Bold']
+        'custom': ['SlatePro-Bold'],
+      },
+      backgroundImage: {
+        'main-bg': "url('/src/Assets/golfcoursebg.png')"
       }
     },
   },
