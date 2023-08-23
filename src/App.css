@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "SlatePro-Bold";
+    src: url("https://db.onlinewebfonts.com/t/5596405ffb89af9b7d8c560ea3d4cb85.eot");
+    src: url("https://db.onlinewebfonts.com/t/5596405ffb89af9b7d8c560ea3d4cb85.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/5596405ffb89af9b7d8c560ea3d4cb85.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/5596405ffb89af9b7d8c560ea3d4cb85.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/5596405ffb89af9b7d8c560ea3d4cb85.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/5596405ffb89af9b7d8c560ea3d4cb85.svg#SlatePro-Bold")format("svg");
+}

@@ -7,8 +7,8 @@ function Signup () {
     <>
         <div class="h-screen flex flex-col 
                     items-center justify-center">
-            <p class="text-black text-4xl mb-20 pb-20 font-semibold">
-              Welcome to PutterPal
+            <p class="text-black text-4xl mb-20 pb-20 font-custom">
+              Create Account
             </p>
             <form>
                 <div className="flex justify-center">
