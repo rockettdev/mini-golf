@@ -66,11 +66,15 @@ function UserRegister () {
                         aria-label="Enter your Username" 
                         type="username" 
                         placeholder="Username" 
-                        class="text-sm text-gray-base w-60
+                        className="text-sm text-gray-base w-60
                                 mr-3 py-5 px-4 h-2 border 
                                 border-gray-200 rounded mb-2" />
                 </div>
                 <div className="flex justify-center">
+
+                    {registerCompletion.status === 403 && <p>User Already Exists</p>}
+                    {registerCompletion.status === 500 && <p>Server Error, Please try again later</p>}
+
                     <input 
                         value={formData.password}
                         onChange={handleChange}
@@ -78,7 +82,7 @@ function UserRegister () {
                         aria-label="Enter your password" 
                         type="password" 
                         placeholder="Password"
-                        class="text-sm text-gray-base mr-3 w-60
+                        className="text-sm text-gray-base mr-3 w-60
                                 py-5 px-4 h-2 border border-gray-200 
                                 rounded mb-2" />
                 </div>
