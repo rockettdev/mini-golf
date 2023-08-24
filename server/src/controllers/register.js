@@ -12,13 +12,22 @@ const registerUser = async (req, res) => {
 
     const userData = {email: email, username: username, password: hashedPassword}
 
-    const newUser = new schemas.Users(userData)
-    const saveUser = await newUser.save()
-
-    if(saveUser) {
-       res.send('New User Created')
+    try {
+        const newUser = new schemas.Users(userData)
+        const saveUser = await newUser.save()
+    
+        if(saveUser) {
+           res.send('New User Created')
+        }
+        res.end()
+    }   catch(e) {
+        if (e.code === 11000) {
+            res.status(403).json({ error: "Username Already in Use" }); 
+        } else {
+            res.status(500).json({ error: e });
+        }
     }
-    res.end()
+
 }
 
 module.exports = {

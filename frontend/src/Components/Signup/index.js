@@ -52,7 +52,7 @@ function UserRegister () {
                         onChange={handleChange}
                         name="email"
                         aria-label="Enter your email address" 
-                        type="text"
+                        type="email"
                         placeholder="Email address" 
                         className="text-sm text-gray-base w-60
                                 mr-3 py-5 px-4 h-2 border 
