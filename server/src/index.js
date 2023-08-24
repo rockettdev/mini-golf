@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const router = require('./routes/router')
+const userRouter = require('./routes/user')
 const mongoose = require('mongoose')
 require('dotenv/config')
 
@@ -16,7 +16,7 @@ const corsOptions = {
     optionSuccessStatus: 200
 }
 app.use(cors(corsOptions))
-app.use('/', router)
+app.use('/user', userRouter)
 
 const dbOptions = {useNewUrlParser:true, useUnifiedTopology:true}
 mongoose.connect(process.env.DB_URI, dbOptions)
