@@ -2,7 +2,7 @@ import '../../App.css'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-function Signup () {
+function UserRegister () {
 
     const [formData, setFormData] = useState({ email: '', username: '', password: '' });
     const [registerCompletion, setRegisterCompletion] = useState('')
@@ -17,6 +17,25 @@ function Signup () {
         });
     }
 
+    const register = async (e) => {
+        e.preventDefault();
+
+        console.log(formData)
+
+        const response = await fetch('http://localhost:4000/user/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+              },
+            body: JSON.stringify(formData)
+          })
+
+          console.log(response)
+
+          setRegisterCompletion(response)
+    }
+
+    console.log(formData);
 
     return (
     <>
@@ -30,8 +49,9 @@ function Signup () {
                     <input 
                         value={formData.email}
                         onChange={handleChange}
+                        name="email"
                         aria-label="Enter your email address" 
-                        type="email"
+                        type="text"
                         placeholder="Email address" 
                         className="text-sm text-gray-base w-60
                                 mr-3 py-5 px-4 h-2 border 
@@ -41,6 +61,7 @@ function Signup () {
                     <input 
                         value={formData.username}
                         onChange={handleChange}
+                        name="username"
                         aria-label="Enter your Username" 
                         type="username" 
                         placeholder="Username" 
@@ -50,8 +71,9 @@ function Signup () {
                 </div>
                 <div className="flex justify-center">
                     <input 
-                        value={formData.username}
+                        value={formData.password}
                         onChange={handleChange}
+                        name="password"
                         aria-label="Enter your password" 
                         type="password" 
                         placeholder="Password"
@@ -60,7 +82,9 @@ function Signup () {
                                 rounded mb-2" />
                 </div>
                 <div className="flex justify-center">
-                    <button class="bg-purple-900 text-white hover:bg-blue-400 font-bold py-2 px-4 mt-3 mb-20 rounded items-center">Submit</button>
+                    <button 
+                    class="bg-purple-900 text-white hover:bg-blue-400 font-bold py-2 px-4 mt-3 mb-20 rounded items-center"
+                    onClick={register}>Submit</button>
                 </div>
             </form>
         </div>
@@ -68,4 +92,4 @@ function Signup () {
     )
 }
 
-export default Signup
+export default UserRegister
