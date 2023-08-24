@@ -72,7 +72,8 @@ function UserRegister () {
                 </div>
                 <div className="flex justify-center">
 
-                    {registerCompletion.status === 403 && <p>User Already Exists</p>}
+                    {registerCompletion.status === 403 && <p>Username Already Exists</p>}
+                    {registerCompletion.status === 409 && <p>Email Already Exists</p>}
                     {registerCompletion.status === 500 && <p>Server Error, Please try again later</p>}
 
                     <input 

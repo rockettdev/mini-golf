@@ -21,8 +21,10 @@ const registerUser = async (req, res) => {
         }
         res.end()
     }   catch(e) {
-        if (e.code === 11000) {
-            res.status(403).json({ error: "Username Already in Use" }); 
+        if (e.code === 11000 && e.keyPattern.email === 1) {
+            res.status(403).json({ error: "Email Already in Use" }); 
+        } else if (e.code === 11000 && e.keyPattern.username === 1) {
+            res.status(409).json({ error: "Username Already in Use" }); 
         } else {
             res.status(500).json({ error: e });
         }
