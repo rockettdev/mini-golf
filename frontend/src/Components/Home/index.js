@@ -10,8 +10,35 @@ function Home () {
                 <img className="mx-auto" alt="" src={putterpal} width={320}/>
             </h1>
             <div className="mt-20">
-                <Link to="login"><button className="flex-row w-24 h-16 bg-white mr-3 mt-20 rounded-2xl text-black font-semibold">Log In</button></Link>
-                <Link to="signup"><button className="flex-row w-24 h-16 bg-white ml-3 mt-20 rounded-2xl text-black font-semibold">Sign Up</button></Link>
+                <form>
+                    <div className="flex justify-center">
+                        <input 
+                            // value={formData.email}
+                            // onChange={handleChange}
+                            name="email"
+                            aria-label="Enter your email address" 
+                            type="email"
+                            placeholder="Email address" 
+                            className="text-sm text-gray-base w-60
+                                    py-5 px-2 h-2 border 
+                                    border-gray-200 rounded mt-20 mb-2"/>                    
+                    </div>
+                    <div className="flex justify-center">
+                        <input 
+                            // value={formData.password}
+                            // onChange={handleChange}
+                            name="password"
+                            aria-label="Enter your password" 
+                            type="password" 
+                            placeholder="Password"
+                            className="text-sm text-gray-base w-60
+                                    py-5 px-2 h-2 border border-gray-200 
+                                    rounded mb-2"/>
+                    </div>
+                </form>
+                <div className="flex justify-center">
+                    <Link to="signup"><button className="flex-row w-24 h-14 bg-white mt-20 rounded-2xl text-black text-lg font-semibold">Log In</button></Link>
+                </div>
             </div>
         </div>
     </>
