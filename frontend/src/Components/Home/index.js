@@ -36,8 +36,9 @@ function Home () {
                                     rounded mb-2"/>
                     </div>
                 </form>
+                   <p className="text-white text-sm pt-3 text-center">New to PutterPal? <Link to="signup"><b>Create Account</b></Link></p>
                 <div className="flex justify-center">
-                    <Link to="signup"><button className="flex-row w-24 h-14 bg-white mt-20 rounded-2xl text-black text-lg font-semibold">Log In</button></Link>
+                    <Link to=""><button className="flex-row w-24 h-14 bg-white mt-20 rounded-2xl text-black text-lg font-semibold">Log In</button></Link>
                 </div>
             </div>
         </div>

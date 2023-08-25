@@ -45,7 +45,7 @@ function UserRegister () {
             <p class="text-white text-4xl mb-20 pb-20 font-custom">
               Create Account
             </p>
-            <form>
+            <form autoComplete="new-password">
                 <div className="flex justify-center">
                     <input 
                         value={formData.email}
@@ -53,9 +53,10 @@ function UserRegister () {
                         name="email"
                         aria-label="Enter your email address" 
                         type="email"
+                        autoComplete="off" 
                         placeholder="Email address" 
                         className="text-sm text-gray-base w-60
-                                mr-3 py-5 px-4 h-2 border 
+                                 py-5 px-4 h-2 border 
                                 border-gray-200 rounded mb-2" />                    
                 </div>
                 <div className="flex justify-center">
@@ -64,32 +65,37 @@ function UserRegister () {
                         onChange={handleChange}
                         name="username"
                         aria-label="Enter your Username" 
-                        type="username" 
+                        type="username"
+                        autoComplete="off" 
                         placeholder="Username" 
                         className="text-sm text-gray-base w-60
-                                mr-3 py-5 px-4 h-2 border 
+                                 py-5 px-4 h-2 border 
                                 border-gray-200 rounded mb-2" />
                 </div>
                 <div className="flex justify-center">
-
-                    {registerCompletion.status === 403 && <p>Username Already Exists</p>}
-                    {registerCompletion.status === 409 && <p>Email Already Exists</p>}
-                    {registerCompletion.status === 500 && <p>Server Error, Please try again later</p>}
 
                     <input 
                         value={formData.password}
                         onChange={handleChange}
                         name="password"
                         aria-label="Enter your password" 
-                        type="password" 
-                        placeholder="Password"
-                        className="text-sm text-gray-base mr-3 w-60
+                        type="password"
+                        autoComplete="none" 
+                            placeholder="Password"
+                        className="text-sm text-gray-base w-60
                                 py-5 px-4 h-2 border border-gray-200 
                                 rounded mb-2" />
                 </div>
+                
+                    {registerCompletion.status === undefined && <p className="text-center text-white text-sm"><span className="font-semibold">Already Have an Account?</span> <Link to="/"><b>Log In</b></Link></p>} 
+                    {registerCompletion.status === 403 && <p className="text-center text-red-700 font-semibold text-base">Email Already In Use</p>}
+                    {registerCompletion.status === 409 && <p className="text-center text-red-700 font-semibold">Username Already Exists</p>}
+                    {registerCompletion.status === 500 && <p className="text-center text-red-700 font-semibold">Server Error, Please try again later</p>}
+
+
                 <div className="flex justify-center">
                     <button 
-                    class="bg-purple-900 text-white hover:bg-blue-400 font-bold py-2 px-4 mt-3 mb-20 rounded items-center"
+                    class=" bg-green-700 text-white hover:bg-blue-400 font-bold py-2 px-4 mt-3 mb-20 rounded items-center"
                     onClick={register}>Submit</button>
                 </div>
             </form>
