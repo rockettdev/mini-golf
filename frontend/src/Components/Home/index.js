@@ -22,7 +22,7 @@ function Home () {
 
     useEffect(() => {
         if (loginCompletion.status === 200) {
-        navigate("/register");
+        navigate("/portal");
         }
     }, [loginCompletion.status, navigate]);
 

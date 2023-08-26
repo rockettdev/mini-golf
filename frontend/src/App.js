@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom"
 import Home from './Components/Home'
 import './App.css';
 import Signup from "./Components/Signup";
+import Portal from "./Components/Portal";
 function App() {
   return (
     <Routes>
@@ -14,6 +15,8 @@ function App() {
       element={<Signup />}
       />
       <Route
+      path='portal'
+      element={<Portal/>}
       />
     </Routes>
   );
