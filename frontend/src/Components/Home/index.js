@@ -20,19 +20,16 @@ function Home () {
         });
     }
 
-    useEffect(() => {
-        if (loginCompletion.status === 200) {
-        navigate("/portal");
-        }
-    }, [loginCompletion.status, navigate]);
+    // useEffect(() => {
+    //     if (loginCompletion.status === 200) {
+    //     navigate("/portal");
+    //     }
+    // }, [loginCompletion.status, navigate]);
 
-    const login = async (e) => {
+    const login = (e) => {
         e.preventDefault();
 
-        console.log('hello');
-        console.log(loginData)
-
-        await fetch('http://localhost:4000/user/login', {
+        fetch('http://localhost:4000/user/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -43,7 +40,8 @@ function Home () {
             setLoginCompletion(res)
            return res.json()
         })
-        .then((data) => localStorage.setItem("token", data.data))
+        .then((data) => localStorage.setItem("token", data.data) )
+        .then(() => navigate('/portal'))
     }
 
     console.log(loginData);
@@ -85,7 +83,7 @@ function Home () {
                 <div className="flex justify-center">
                     <button 
                     className="flex-row w-24 h-14 bg-white mt-20 rounded-2xl text-black text-lg font-semibold"
-                    onClick={login}
+                    onClick={(e) => login(e)}
                     >Log In</button>
                 </div>
             </div>

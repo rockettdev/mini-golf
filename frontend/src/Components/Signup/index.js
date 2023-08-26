@@ -20,7 +20,6 @@ function UserRegister () {
     const register = async (e) => {
         e.preventDefault();
 
-        console.log('hello');
         console.log(formData)
 
         const response = await fetch('http://localhost:4000/user/register', {

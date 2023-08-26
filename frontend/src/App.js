@@ -3,6 +3,9 @@ import Home from './Components/Home'
 import './App.css';
 import Signup from "./Components/Signup";
 import Portal from "./Components/Portal";
+import AuthRoute from "./Utils/authRoute";
+
+
 function App() {
   return (
     <Routes>
@@ -16,8 +19,7 @@ function App() {
       />
       <Route
       path='portal'
-      element={<Portal/>}
-      />
+      element={<AuthRoute element={<Portal />} />} />
     </Routes>
   );
 }
