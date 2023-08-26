@@ -13,6 +13,8 @@ function App() {
       path='signup'
       element={<Signup />}
       />
+      <Route
+      />
     </Routes>
   );
 }

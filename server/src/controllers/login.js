@@ -1,0 +1,31 @@
+const bcrypt = require("bcryptjs");
+const jwt = require('jsonwebtoken')
+const schemas = require('../schema/schema')
+
+const secret = process.env.JWT_SECRET
+
+const loginUser = async (req, res) => {
+
+    const { email, password } = req.body 
+
+    const userSearch = await schemas.Users.findOne({email: email})
+
+    if(!userSearch) {
+        return res.status(401).json({ e: "User Not Found"})
+    }
+
+    const passwordVerification = await bcrypt.compare(password, userSearch.password)
+
+    if(!passwordVerification) {
+        return res.status(401).json({ e: "Password is incorrect." })
+    }
+
+    const token = jwt.sign({username: userSearch.username}, secret)
+    res.status(200).json({data: token})
+    console.log(token)
+
+}
+
+module.exports = {
+    loginUser
+}

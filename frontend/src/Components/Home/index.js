@@ -1,8 +1,53 @@
 import '../../App.css'
 import { Link } from 'react-router-dom';
 import putterpal from '../../Assets/putterpal.png'
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Home () {
+
+    const [loginData, setLoginData] = useState({ email: '', password: '' });
+    const [loginCompletion, setLoginCompletion] = useState('')
+    const navigate = useNavigate();    
+
+
+    const handleChange = (e) => {
+        const { value, name } = e.target;
+
+        setLoginData({
+            ...loginData,
+            [name]: value
+        });
+    }
+
+    useEffect(() => {
+        if (loginCompletion.status === 200) {
+        navigate("/register");
+        }
+    }, [loginCompletion.status, navigate]);
+
+    const login = async (e) => {
+        e.preventDefault();
+
+        console.log('hello');
+        console.log(loginData)
+
+        await fetch('http://localhost:4000/user/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+              },
+            body: JSON.stringify(loginData)
+          })
+          .then(res => {
+            setLoginCompletion(res)
+           return res.json()
+        })
+        .then((data) => localStorage.setItem("token", data.data))
+    }
+
+    console.log(loginData);
+
     return (
     <>
         <div className="flex flex-wrap justify-center bg-main-bg bg-cover h-screen">
@@ -13,8 +58,8 @@ function Home () {
                 <form>
                     <div className="flex justify-center">
                         <input 
-                            // value={formData.email}
-                            // onChange={handleChange}
+                            value={loginData.email}
+                            onChange={handleChange}
                             name="email"
                             aria-label="Enter your email address" 
                             type="email"
@@ -25,8 +70,8 @@ function Home () {
                     </div>
                     <div className="flex justify-center">
                         <input 
-                            // value={formData.password}
-                            // onChange={handleChange}
+                            value={loginData.password}
+                            onChange={handleChange}
                             name="password"
                             aria-label="Enter your password" 
                             type="password" 
@@ -38,7 +83,10 @@ function Home () {
                 </form>
                    <p className="text-white text-sm pt-3 text-center">New to PutterPal? <Link to="signup"><b>Create Account</b></Link></p>
                 <div className="flex justify-center">
-                    <Link to=""><button className="flex-row w-24 h-14 bg-white mt-20 rounded-2xl text-black text-lg font-semibold">Log In</button></Link>
+                    <button 
+                    className="flex-row w-24 h-14 bg-white mt-20 rounded-2xl text-black text-lg font-semibold"
+                    onClick={login}
+                    >Log In</button>
                 </div>
             </div>
         </div>
