@@ -20,12 +20,6 @@ function Home () {
         });
     }
 
-    // useEffect(() => {
-    //     if (loginCompletion.status === 200) {
-    //     navigate("/portal");
-    //     }
-    // }, [loginCompletion.status, navigate]);
-
     const login = (e) => {
         e.preventDefault();
 

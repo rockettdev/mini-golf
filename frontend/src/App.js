@@ -4,6 +4,7 @@ import './App.css';
 import Signup from "./Components/Signup";
 import Portal from "./Components/Portal";
 import AuthRoute from "./Utils/authRoute";
+import Minigame from "./Components/Minigame";
 
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
       <Route
       path='portal'
       element={<AuthRoute element={<Portal />} />} />
+      <Route
+      path='newgame'
+      element={<AuthRoute element={<Minigame />} />} />
     </Routes>
   );
 }
