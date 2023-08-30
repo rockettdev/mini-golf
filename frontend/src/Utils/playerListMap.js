@@ -1,6 +1,7 @@
 import React from 'react'
+import { ACTIONS } from '../Components/Minigame/index.js'
 
-export default function Playerlistmap({ player, status }) {
+export default function Playerlistmap({ player, status, dispatch }) {
 
   return (
     <>
@@ -16,7 +17,7 @@ export default function Playerlistmap({ player, status }) {
           <div>
             <button className="relative left-6">-</button>
             <span className=" relative left-6 mx-7">{player.score}</span>
-            <button className="relative left-6">+</button>
+            <button onClick={() => dispatch({ type: ACTIONS.INCREMENT_SCORE, payload: { id: player.id }  })} className="relative left-6">+</button>
           </div>
         </div>
     }

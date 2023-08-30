@@ -3,7 +3,7 @@ import Playerlistmap from "../../Utils/playerListMap";
 
 let id = 0
 
-const ACTIONS = {
+export const ACTIONS = {
     ADD_PLAYER: 'add-player',
     INCREMENT_SCORE: 'increment-score'
 }
@@ -18,11 +18,15 @@ function reducer(players, action) {
         case ACTIONS.ADD_PLAYER:
             return [...players, newPlayer(action.payload.name)]
         case ACTIONS.INCREMENT_SCORE:
-            return
+            return players.map(player => {
+                if (player.id === action.payload.id) {
+                    return {...player, score: player.score += 1}
+                }
+                return player
+            })
     }
 
 }
-
 
 function Minigame () {
 
@@ -63,7 +67,7 @@ function Minigame () {
                 <h1 className="font-custom text-white text-3xl pt-10 mb-5">Player List</h1>
                 <ul className="font-custom text-white text-center text-2xl h-72">
                     {players.map(player => {
-                     return <Playerlistmap key={player.id} player={player} status={playerNameStatus} />
+                     return <Playerlistmap key={player.id} player={player} status={playerNameStatus} dispatch={dispatch} />
                     }
                     )}
                 </ul>
