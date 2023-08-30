@@ -57,6 +57,34 @@ function Minigame () {
         setPlayerNameStatus(true)
     }
 
+    const endGame = async () => {
+        setHole(hole+1)
+       await players.forEach((player) => {
+            player.finalScore += player.hole1
+            player.finalScore += player.hole2
+            player.finalScore += player.hole3
+            player.finalScore += player.hole4
+            player.finalScore += player.hole5
+            player.finalScore += player.hole6
+            player.finalScore += player.hole7
+            player.finalScore += player.hole8
+            player.finalScore += player.hole9
+            player.finalScore += player.hole10
+            player.finalScore += player.hole11
+            player.finalScore += player.hole12
+            player.finalScore += player.hole13
+            player.finalScore += player.hole14
+            player.finalScore += player.hole15
+            player.finalScore += player.hole16
+            player.finalScore += player.hole17
+            player.finalScore += player.hole18
+        })
+        console.log(players)
+        players.sort((player1, player2) => player2.finalScore - player1.finalScore);
+        console.log(players)
+
+    }
+
         console.log(players)
 
     return (
@@ -117,7 +145,7 @@ function Minigame () {
                     {hole === 18 &&
                     <>
                        <button onClick={() => {setHole(hole-1)}} className="w-24 h-11 mr-10 bg-red-700 rounded-lg">Back</button>
-                       <button onClick={() => {setHole(hole+1)}} className="w-24 h-11 ml-10 bg-green-700 rounded-lg">Finish</button>
+                       <button onClick={endGame} className="w-24 h-11 ml-10 bg-green-700 rounded-lg">Finish</button>
                     </>
                     }
                 </div>
