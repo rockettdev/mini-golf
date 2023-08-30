@@ -42,6 +42,10 @@ function Minigame () {
         setName('')
     }
 
+    const startGame = () => {
+        setPlayerNameStatus(true)
+    }
+
         console.log(players)
 
     return (
@@ -71,8 +75,22 @@ function Minigame () {
                     }
                     )}
                 </ul>
+                <button onClick={startGame} className="font-custom text-lg text-white h-12 w-28 bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-cyan-500 via-cyan-700 to-blue-400 rounded-xl transition duration-300 ease-in-out transform hover:-translate-y-0.5 hover:scale-105 shadow-xl"> Start Game </button>
             </>
             }
+
+            {playerNameStatus === true &&
+            <div className="bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black rounded-2xl w-4/5  h-40">
+                <h1 className="font-custom mt-4 text-2xl text-white text-center">Add a New Player</h1>
+                <ul className="font-custom text-white text-center text-2xl h-72">
+                    {players.map(player => {
+                     return <Playerlistmap key={player.id} player={player} status={playerNameStatus} dispatch={dispatch} />
+                    }
+                    )}
+                </ul>
+            </div>
+            }
+
         </div>
 
                 </>
