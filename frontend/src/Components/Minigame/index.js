@@ -3,7 +3,6 @@ import Playerlistmap from "../../Utils/playerListMap";
 
 let id = 0
 
-
 export const ACTIONS = {
     ADD_PLAYER: 'add-player',
     INCREMENT_SCORE: 'increment-score',
@@ -34,7 +33,6 @@ function reducer(players, action) {
                 return player
             })
     }
-
 }
 
 function Minigame () {
@@ -92,16 +90,44 @@ function Minigame () {
             </>
             }
 
-            {playerNameStatus === true &&
-            <div className="bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black rounded-2xl w-4/5  h-40">
-                <h1 className="font-custom mt-4 mb-10 text-2xl text-white text-center">Scorecard</h1>
-                <ul className="font-custom text-white text-center text-2xl h-72">
-                    {players.map(player => {
-                     return <Playerlistmap key={player.id} player={player} status={playerNameStatus} dispatch={dispatch} currentHole={currentHole} />
+            {playerNameStatus === true && hole < 19 &&
+            <>
+            <h1 className="font-custom text-white text-3xl mb-5">Hole <span className=" text-[32px] text-red-600">{hole}</span></h1>
+                <div className="bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black rounded-2xl w-4/5  h-2/5">
+                    <h1 className="font-custom mt-4 mb-10 text-2xl text-white text-center">Scorecard</h1>
+                    <ul className="font-custom text-white text-center text-2xl h-72">
+                        {players.map(player => {
+                        return <Playerlistmap key={player.id} player={player} status={playerNameStatus} dispatch={dispatch} currentHole={currentHole} />
+                        }
+                        )}
+                    </ul>
+                </div>
+                <div className="grid-flow-col mt-10 text-lg font-custom text-white">
+                    {hole === 1 &&
+                    <>
+                        <button onClick={() => {setHole(hole+1)}} className="w-24 h-11 bg-green-700 rounded-lg">Next</button>
+                    </>
                     }
-                    )}
-                </ul>
-            </div>
+                    {hole > 1 && hole < 18 &&
+                    <>
+                       <button onClick={() => {setHole(hole-1)}} className="w-24 h-11 mr-10 bg-red-700 rounded-lg">Back</button>
+                       <button onClick={() => {setHole(hole+1)}} className="w-24 h-11 ml-10 bg-green-700 rounded-lg">Next</button>
+                    </>
+                    }
+                    {hole === 18 &&
+                    <>
+                       <button onClick={() => {setHole(hole-1)}} className="w-24 h-11 mr-10 bg-red-700 rounded-lg">Back</button>
+                       <button onClick={() => {setHole(hole+1)}} className="w-24 h-11 ml-10 bg-green-700 rounded-lg">Finish</button>
+                    </>
+                    }
+                </div>
+            </>
+            }
+            {playerNameStatus === true && hole === 19 &&
+            <>
+                <h1>hi</h1>
+                <button onClick={() => {setHole(hole-1)}} className="w-24 h-11 mr-10 bg-red-700 rounded-lg">Back</button>
+            </>
             }
 
         </div>
