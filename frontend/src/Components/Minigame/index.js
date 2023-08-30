@@ -3,13 +3,15 @@ import Playerlistmap from "../../Utils/playerListMap";
 
 let id = 0
 
+
 export const ACTIONS = {
     ADD_PLAYER: 'add-player',
-    INCREMENT_SCORE: 'increment-score'
+    INCREMENT_SCORE: 'increment-score',
+    DECREMENT_SCORE: 'decrement-score'
 }
 
 function newPlayer(name) {
-    return { id: id += 1, name: name, score: 0}
+    return { id: id += 1, name: name, hole1: 0, hole2: 0, hole3: 0, hole4: 0, hole5: 0, hole6: 0, hole7: 0, hole8: 0, hole9: 0, hole10: 0, hole11: 0, hole12: 0, hole13: 0, hole14: 0, hole15: 0, hole16: 0, hole17: 0, hole18: 0, finalScore: 0}
 }
 
 function reducer(players, action) {
@@ -20,7 +22,14 @@ function reducer(players, action) {
         case ACTIONS.INCREMENT_SCORE:
             return players.map(player => {
                 if (player.id === action.payload.id) {
-                    return {...player, score: player.score += 1}
+                    return {...player, [action.payload.currentHole]: player[action.payload.currentHole] += 1}
+                }
+                return player
+            })
+        case ACTIONS.DECREMENT_SCORE:
+            return players.map(player => {
+                if (player.id === action.payload.id) {
+                    return {...player, [action.payload.currentHole]: player[action.payload.currentHole] -= 1}
                 }
                 return player
             })
@@ -33,6 +42,10 @@ function Minigame () {
     const [playerNameStatus, setPlayerNameStatus] = useState(false)
     const [name, setName] = useState('')
     const [players, dispatch] = useReducer(reducer, [])
+    const [hole, setHole] = useState(1)
+    const currentHole = `hole${hole}`
+
+    console.log(currentHole)
 
     console.log(players)
 
@@ -71,7 +84,7 @@ function Minigame () {
                 <h1 className="font-custom text-white text-3xl pt-10 mb-5">Player List</h1>
                 <ul className="font-custom text-white text-center text-2xl h-72">
                     {players.map(player => {
-                     return <Playerlistmap key={player.id} player={player} status={playerNameStatus} dispatch={dispatch} />
+                     return <Playerlistmap key={player.id} player={player} status={playerNameStatus} dispatch={dispatch} currentHole={currentHole}/>
                     }
                     )}
                 </ul>
@@ -81,10 +94,10 @@ function Minigame () {
 
             {playerNameStatus === true &&
             <div className="bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black rounded-2xl w-4/5  h-40">
-                <h1 className="font-custom mt-4 text-2xl text-white text-center">Add a New Player</h1>
+                <h1 className="font-custom mt-4 mb-10 text-2xl text-white text-center">Scorecard</h1>
                 <ul className="font-custom text-white text-center text-2xl h-72">
                     {players.map(player => {
-                     return <Playerlistmap key={player.id} player={player} status={playerNameStatus} dispatch={dispatch} />
+                     return <Playerlistmap key={player.id} player={player} status={playerNameStatus} dispatch={dispatch} currentHole={currentHole} />
                     }
                     )}
                 </ul>
