@@ -153,8 +153,31 @@ function Minigame () {
             }
             {playerNameStatus === true && hole === 19 &&
             <>
-                <h1>hi</h1>
-                <button onClick={() => {setHole(hole-1)}} className="w-24 h-11 mr-10 bg-red-700 rounded-lg">Back</button>
+            <h1 className="font-custom text-white text-5xl pb-20">RESULTS</h1>
+            <div className="grid grid-cols-3 w-3/4 h-1/6 font-custom text-white text-2xl mb-64">
+                <div className="">{players[1] && 
+                    <div>
+                        <div className="pt-10 text-center">{players[1].name}</div>
+                        <div className="h-20 bg-gradient-to-t from-gray-900 to-gray-100 text-center text-black text-4xl">2</div>
+                    </div>
+                }
+                </div>
+                <div className="">{players[0] && 
+                    <div className="">
+                        <div className="pt-2 text-center">{players[0].name}</div>
+                        <div className="h-28 bg-gradient-to-t from-yellow-900 to-yellow-300 text-center text-black text-4xl">1</div>
+                    </div>
+                }
+                </div>
+                <div className="">{players[2] && 
+                    <>
+                    <div className="pt-14 text-center">{players[2].name}</div>
+                    <div className="h-16 bg-gradient-to-t from-gray-700 to-orange-700 text-center text-black text-4xl">3</div>
+                </>
+                }
+                </div>
+            </div>
+
             </>
             }
 
