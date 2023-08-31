@@ -21,7 +21,9 @@ const loginUser = async (req, res) => {
     }
 
     const token = jwt.sign({username: userSearch.username}, secret)
-    res.status(200).json({data: token})
+    const username = userSearch.username
+    console.log(username)
+    res.status(200).json({data: token, username: username})
     console.log(token)
 
 }

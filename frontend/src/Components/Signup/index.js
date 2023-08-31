@@ -1,11 +1,16 @@
 import '../../App.css'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function UserRegister () {
 
     const [formData, setFormData] = useState({ email: '', username: '', password: '' });
     const [registerCompletion, setRegisterCompletion] = useState('')
+    const [loginCompletion, setLoginCompletion] = useState('')
+    const navigate = useNavigate();    
+
+
 
 
     const handleChange = (e) => {
@@ -29,10 +34,25 @@ function UserRegister () {
               },
             body: JSON.stringify(formData)
           })
-
           console.log(response)
-
           setRegisterCompletion(response)
+          console.log(registerCompletion)
+
+          if(registerCompletion.status === 200) {
+            fetch('http://localhost:4000/user/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                  },
+                body: JSON.stringify(formData)
+              })
+              .then(res => {
+                setLoginCompletion(res)
+               return res.json()
+            })
+            .then((data) => {localStorage.setItem("token", data.data); localStorage.setItem("user", data.username) } )
+            .then(() => navigate('/portal'))
+          }
     }
 
     console.log(formData);

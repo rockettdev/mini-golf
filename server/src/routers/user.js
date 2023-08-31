@@ -10,4 +10,10 @@ const {
 } = require('../controllers/login')
 router.post('/login', loginUser)
 
+const {
+    getUser
+} = require('../controllers/getUser')
+router.post('/login', getUser)
+
+
 module.exports = router

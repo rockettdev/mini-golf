@@ -79,13 +79,14 @@ function Minigame () {
             player.finalScore += player.hole17
             player.finalScore += player.hole18
         })
-        console.log(players)
-        players.sort((player1, player2) => player2.finalScore - player1.finalScore);
-        console.log(players)
+        players.sort((player1, player2) => player1.finalScore - player2.finalScore);
+    }
+
+    const submitResults = () => {
 
     }
 
-        console.log(players)
+
 
     return (
         <>
@@ -153,30 +154,72 @@ function Minigame () {
             }
             {playerNameStatus === true && hole === 19 &&
             <>
-            <h1 className="font-custom text-white text-5xl pb-20">RESULTS</h1>
-            <div className="grid grid-cols-3 w-3/4 h-1/6 font-custom text-white text-2xl mb-64">
+            <h1 className="font-custom text-white text-4xl pb-14">RESULTS</h1>
+            <div className="grid grid-cols-3 w-3/4 h-1/6 font-custom text-white text-xl mb-10">
                 <div className="">{players[1] && 
                     <div>
-                        <div className="pt-10 text-center">{players[1].name}</div>
+                        <div className="pt-10 text-center">{players[1].name}: {players[1].finalScore}</div>
                         <div className="h-20 bg-gradient-to-t from-gray-900 to-gray-100 text-center text-black text-4xl">2</div>
                     </div>
                 }
                 </div>
                 <div className="">{players[0] && 
                     <div className="">
-                        <div className="pt-2 text-center">{players[0].name}</div>
+                        <div className="pt-2 text-center">{players[0].name}: {players[0].finalScore}</div>
                         <div className="h-28 bg-gradient-to-t from-yellow-900 to-yellow-300 text-center text-black text-4xl">1</div>
                     </div>
                 }
                 </div>
                 <div className="">{players[2] && 
                     <>
-                    <div className="pt-14 text-center">{players[2].name}</div>
+                    <div className="pt-14 text-center">{players[2].name}: {players[1].finalScore}</div>
                     <div className="h-16 bg-gradient-to-t from-gray-700 to-orange-700 text-center text-black text-4xl">3</div>
                 </>
                 }
                 </div>
             </div>
+
+            {players[3] && 
+
+            <div className="grid  grid-rows-6 text-white w-1/2">
+                <div>
+                    <div className="grid grid-cols-2">4</div>
+                    <div>{players[3].name}</div>
+                </div>
+                {players[4] &&
+                 <div>
+                    <div>5</div>
+                    <div>{players[4].name}</div>
+                </div> 
+                }
+                {players[5] &&
+                 <div className="grid grid-cols-2">
+                    <div>6</div>
+                    <div>{players[5].name}</div>
+                </div> 
+                }
+                {players[6] &&
+                 <div>
+                    <div>7</div>
+                    <div></div>
+                </div> 
+                }
+                {players[7] &&
+                 <div>
+                    <div>8</div>
+                    <div></div>
+                </div> 
+                }
+                {players[8] &&
+                 <div>
+                    <div>9</div>
+                    <div></div>
+                </div> 
+                }
+
+            </div>
+            }
+            <button onClick={submitResults} className="font-custom text-white bg-green-600 rounded-2xl h-10 w-32 shadow-xl">Submit Results</button>
 
             </>
             }

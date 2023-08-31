@@ -34,7 +34,7 @@ function Home () {
             setLoginCompletion(res)
            return res.json()
         })
-        .then((data) => localStorage.setItem("token", data.data) )
+        .then((data) => {localStorage.setItem("token", data.data); localStorage.setItem("user", data.username) } )
         .then(() => navigate('/portal'))
     }
 
