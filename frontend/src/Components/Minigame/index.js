@@ -1,4 +1,5 @@
 import { useReducer, useState } from "react";
+import { useNavigate } from "react-router-dom"
 import Playerlistmap from "../../Utils/playerListMap";
 
 let id = 0
@@ -42,6 +43,8 @@ function Minigame () {
     const [players, dispatch] = useReducer(reducer, [])
     const [hole, setHole] = useState(1)
     const currentHole = `hole${hole}`
+    const navigate = useNavigate();
+
 
     console.log(currentHole)
 
@@ -79,14 +82,12 @@ function Minigame () {
             player.finalScore += player.hole17
             player.finalScore += player.hole18
         })
-        players.sort((player1, player2) => player1.finalScore - player2.finalScore);
+        players.sort((player1, player2) => player2.finalScore - player1.finalScore);
     }
 
     const submitResults = () => {
-
+        navigate("/portal")
     }
-
-
 
     return (
         <>

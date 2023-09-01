@@ -5,6 +5,7 @@ import Signup from "./Components/Signup";
 import Portal from "./Components/Portal";
 import AuthRoute from "./Utils/authRoute";
 import Minigame from "./Components/Minigame";
+import Settings from "./Components/Settings"
 
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
       <Route
       path='newgame'
       element={<AuthRoute element={<Minigame />} />} />
+      <Route
+      path='settings'
+      element={<AuthRoute element={<Settings />} />} />
     </Routes>
   );
 }

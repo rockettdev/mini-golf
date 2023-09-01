@@ -10,9 +10,6 @@ function UserRegister () {
     const [loginCompletion, setLoginCompletion] = useState('')
     const navigate = useNavigate();    
 
-
-
-
     const handleChange = (e) => {
         const { value, name } = e.target;
 
@@ -36,7 +33,7 @@ function UserRegister () {
           })
           console.log(response)
           setRegisterCompletion(response)
-          console.log(registerCompletion)
+          console.log(registerCompletion.status)
 
           if(registerCompletion.status === 200) {
             fetch('http://localhost:4000/user/login', {
@@ -107,6 +104,7 @@ function UserRegister () {
                 </div>
                 
                     {registerCompletion.status === undefined && <p className="text-center text-white text-sm"><span className="font-semibold">Already Have an Account?</span> <Link to="/"><b>Log In</b></Link></p>} 
+                    {registerCompletion.status === 200 && <p className="text-center text-green-500 font-semibold text-base">Account Successfully Created! <Link to="/">Log In</Link></p>}
                     {registerCompletion.status === 403 && <p className="text-center text-red-700 font-semibold text-base">Email Already In Use</p>}
                     {registerCompletion.status === 409 && <p className="text-center text-red-700 font-semibold">Username Already Exists</p>}
                     {registerCompletion.status === 500 && <p className="text-center text-red-700 font-semibold">Server Error, Please try again later</p>}
