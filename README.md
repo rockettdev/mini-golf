@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# PutterPal Mini Golf Tracker Webapp
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
