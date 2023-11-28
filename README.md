@@ -32,4 +32,4 @@ This project was developed to provide a solution to small Mini Golfing businesse
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://media.discordapp.net/attachments/878744167507951619/1179116055285739571/image.png?ex=65789c66&is=65662766&hm=d3a8d3a96bd40b83372f517364b2c1c3ffcd34967b84ee9de22f4a71d9955c7f&=&format=webp&quality=lossless&width=418&height=905)
