@@ -23,6 +23,7 @@ This project was developed to provide a solution to small Mini Golfing businesse
 - Fully Functioning full-stack application
 - Log-in and Sign Up with Email, Username & Password
 - Sensitive Data Encryption with Bcrypt
+- Smooth and User Friendly UI
 - Tracks up to 10 Guests' Scores
 - Calculates Final Scores and Displays a leaderboard
 - Location Selector (Soon)
