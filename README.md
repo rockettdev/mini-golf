@@ -14,11 +14,9 @@ This project was developed to provide a solution to small Mini Golfing businesse
 https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg
 https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg
 
-
-![Logo](https://cdn.discordapp.com/attachments/878744167507951619/1179103812615684186/Screenshot_2023-11-28_165310_1.png?ex=657890ff&is=65661bff&hm=719cc192937e56243c237ef228bb94880fdd17c7c950b71345206beae8d50f0f&)
 <p float="left">
-  <img src="https://cdn.discordapp.com/attachments/878744167507951619/1179103812615684186/Screenshot_2023-11-28_165310_1.png?ex=657890ff&is=65661bff&hm=719cc192937e56243c237ef228bb94880fdd17c7c950b71345206beae8d50f0f&" width="100" />
-  <img src="https://cdn.discordapp.com/attachments/878744167507951619/1179103812615684186/Screenshot_2023-11-28_165310_1.png?ex=657890ff&is=65661bff&hm=719cc192937e56243c237ef228bb94880fdd17c7c950b71345206beae8d50f0f&" width="100" /> 
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="70" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="70" /> 
   <img src="/img3.png" width="100" />
 </p>
 
