@@ -8,11 +8,7 @@ This project was developed to provide a solution to small Mini Golfing businesse
 
 
 
-## Key Features
-
-
-https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg
-https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg
+## Tech Stack
 
 <p float="left">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="70" />
