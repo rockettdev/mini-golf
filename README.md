@@ -19,10 +19,15 @@ This project was developed to provide a solution to small Mini Golfing businesse
 
 ## Features
 
-- Light/dark mode toggle
-- Live previews
-- Fullscreen mode
-- Cross platform
+- Mobile & Handheld Devices supported
+- Fully Functioning full-stack application
+- Log-in and Sign Up with Email, Username & Password
+- Sensitive Data Encryption with Bcrypt
+- Tracks up to 10 Guests' Scores
+- Calculates Final Scores and Displays a leaderboard
+- Location Selector (Soon)
+- Career Stats (Soon)
+- Leaderboards (Soon)
 
 
 ## Screenshots
