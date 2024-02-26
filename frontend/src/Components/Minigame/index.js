@@ -45,9 +45,6 @@ function Minigame () {
     const currentHole = `hole${hole}`
     const navigate = useNavigate();
 
-
-    console.log(currentHole)
-
     console.log(players)
 
     const handleSubmit = (e) => {
@@ -82,7 +79,6 @@ function Minigame () {
             player.hole17 +
             player.hole18;
         })
-        console.log(players.player2)
 
         // Sorts the final score from low to high in order to correctly display the winner at the end of the game
 
@@ -188,39 +184,29 @@ function Minigame () {
 
             {players[3] && 
 
-            <div className="grid  grid-rows-6 text-white w-1/2">
+            <div className="grid  grid-rows-6 text-white w-3/4 font-bold text-lg">
                 <div>
-                    <div className="grid grid-cols-2">4</div>
-                    <div>{players[3].name}</div>
+                    <div>4th: {players[3].name}: {players[3].finalScore}</div>
                 </div>
                 {players[4] &&
                  <div>
-                    <div>5</div>
-                    <div>{players[4].name}</div>
+                    <div>5th: {players[4].name}: {players[4].finalScore}</div>
                 </div> 
                 }
                 {players[5] &&
-                 <div className="grid grid-cols-2">
-                    <div>6</div>
-                    <div>{players[5].name}</div>
+                 <div>
+                    <div>6th: {players[5].name}: {players[5].finalScore}</div>
                 </div> 
                 }
                 {players[6] &&
                  <div>
-                    <div>7</div>
-                    <div></div>
+                    <div>{players[6].name}: {players[5].finalScore}</div>
+
                 </div> 
                 }
                 {players[7] &&
                  <div>
-                    <div>8</div>
-                    <div></div>
-                </div> 
-                }
-                {players[8] &&
-                 <div>
-                    <div>9</div>
-                    <div></div>
+                    <div>{players[7].name}: {players[7].finalScore}</div>
                 </div> 
                 }
 

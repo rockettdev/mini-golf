@@ -3,8 +3,6 @@ import { ACTIONS } from '../Components/Minigame/index.js'
 
 export default function Playerlistmap({ player, status, dispatch, currentHole }) {
 
-  console.log(currentHole)
-
   return (
     <>
       {status === false &&
