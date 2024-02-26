@@ -3,10 +3,15 @@ import flag from '../../Assets/flag.png'
 import settings from '../../Assets/settings.png'
 import stats from '../../Assets/stats.png'
 import leaderboard from '../../Assets/leaderboard.png'
+import { useEffect } from "react"
 
-const user = localStorage.getItem("user")
+let user = localStorage.getItem("user")
 
 function Portal () {
+
+    useEffect(() => {
+        user = localStorage.getItem("user")
+    },[user])
 
     const navigate = useNavigate();
 

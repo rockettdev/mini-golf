@@ -62,27 +62,31 @@ function Minigame () {
 
     const endGame = async () => {
         setHole(hole+1)
-       await players.forEach((player) => {
-            player.finalScore += player.hole1
-            player.finalScore += player.hole2
-            player.finalScore += player.hole3
-            player.finalScore += player.hole4
-            player.finalScore += player.hole5
-            player.finalScore += player.hole6
-            player.finalScore += player.hole7
-            player.finalScore += player.hole8
-            player.finalScore += player.hole9
-            player.finalScore += player.hole10
-            player.finalScore += player.hole11
-            player.finalScore += player.hole12
-            player.finalScore += player.hole13
-            player.finalScore += player.hole14
-            player.finalScore += player.hole15
-            player.finalScore += player.hole16
-            player.finalScore += player.hole17
-            player.finalScore += player.hole18
+        players.forEach((player) => {
+            player.finalScore += player.hole1 +
+            player.hole2 +
+            player.hole3 +
+            player.hole4 +
+            player.hole5 +
+            player.hole6 +
+            player.hole7 +
+            player.hole8 +
+            player.hole9 +
+            player.hole10 +
+            player.hole11 +
+            player.hole12 +
+            player.hole13 +
+            player.hole14 +
+            player.hole15 +
+            player.hole16 +
+            player.hole17 +
+            player.hole18;
         })
-        players.sort((player1, player2) => player2.finalScore - player1.finalScore);
+        console.log(players.player2)
+
+        // Sorts the final score from low to high in order to correctly display the winner at the end of the game
+
+        players.sort((player1, player2) => player1.finalScore - player2.finalScore);
     }
 
     const submitResults = () => {
@@ -179,6 +183,8 @@ function Minigame () {
                 }
                 </div>
             </div>
+
+                {/* Checks if there were more than X amount of players to display the correct final leaderboard */}
 
             {players[3] && 
 
