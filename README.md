@@ -1,70 +1,43 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Logo](https://i.imgur.com/4h4nFDP.png)
 
-## Available Scripts
 
-In the project directory, you can run:
+# PutterPal Mini Golf Tracker Mobile Webapp
 
-### `npm start`
+This project was developed to provide a solution to small Mini Golfing businesses and potentially larger Golf Courses & Resorts to save the usage of paper score counters whilst positively impacting the environment and improving general user experience!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p float="left">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="70" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" width="70" /> 
+  <img src="https://camo.githubusercontent.com/5734d0669fe22ce04a1cb989a156cd32c379875f6bca56d5210c9432824856d9/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f7461696c77696e646373732f7461696c77696e646373732d69636f6e2e737667" width="70" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" width="70" /> 
+</p>
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Mobile & Handheld Devices supported
+- Fully Functioning full-stack application
+- Log-in and Sign Up with Email, Username & Password
+- Sensitive Data Encryption with Bcrypt
+- Smooth and User Friendly UI
+- Tracks up to 10 Guests' Scores
+- Calculates Final Scores and Displays a leaderboard
+- Location Selector (Soon)
+- Career Stats (Soon)
+- Leaderboards (Soon)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Screenshots
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p float="left">
+  <img src="https://media.discordapp.net/attachments/878744167507951619/1179116055285739571/image.png?ex=65789c66&is=65662766&hm=d3a8d3a96bd40b83372f517364b2c1c3ffcd34967b84ee9de22f4a71d9955c7f&=&format=webp&quality=lossless&width=418&height=905" height="600" />
+  <img src="https://media.discordapp.net/attachments/878744167507951619/1179116286534504498/image.png?ex=65789c9d&is=6566279d&hm=e2ab8c58fc99960e88cb417a41026ce04e190448f2f9348a181073b17fcf00be&=&format=webp&quality=lossless" height="600" /> 
+</p>
+<p float="left">
+  <img src="https://media.discordapp.net/attachments/878744167507951619/1179116690961866833/image.png?ex=65789cfe&is=656627fe&hm=f47c34caa6b7ad289ac56646720eecf28db4b0b301e0dae3477e0b3205503bb8&=&format=webp&quality=lossless&width=408&height=905" height="600" />
+  <img src="https://cdn.discordapp.com/attachments/878744167507951619/1179116815473971322/image.png?ex=65789d1b&is=6566281b&hm=d71c1d3c4574a0c86595b5ab1277d71c44b7b9d0e58970a0cebb98a14627df24&" height="600" /> 
+  </p>
