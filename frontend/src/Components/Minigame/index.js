@@ -38,6 +38,7 @@ function reducer(players, action) {
 
 function Minigame () {
 
+    const [status, setStatus] = useState({ message: '', visible: false })
     const [playerNameStatus, setPlayerNameStatus] = useState(false)
     const [name, setName] = useState('')
     const [players, dispatch] = useReducer(reducer, [])
@@ -48,10 +49,22 @@ function Minigame () {
     console.log(players)
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
+        
+        // Check if the name is blank
+        if (!name.trim()) {
+            // If blank, display an error message or perform any desired action
+            setStatus({ message: 'Please enter a valid name.', visible: true })
+            return; // Exit the function
+        }
+        
+        // Dispatch action to add player
         dispatch({ type: ACTIONS.ADD_PLAYER, payload: { name: name } })
-        setName('')
-    }
+        
+        // Reset name input field ans sets status to false
+        setStatus({ message: '', visible: false })
+        setName('');
+    };
 
     const startGame = () => {
         setPlayerNameStatus(true)
@@ -95,7 +108,7 @@ function Minigame () {
                     items-center justify-center bg-main-bg bg-cover">
             {playerNameStatus === false &&
             <>
-                <div className="bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black rounded-2xl w-4/5  h-40">
+                <div className="bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black rounded-2xl w-4/5** h-40">
                     <h1 className="font-custom mt-4 text-2xl text-white text-center">Add a New Player</h1>
                     <form>
                         <input 
@@ -108,6 +121,7 @@ function Minigame () {
                                 rounded mt-6" />
                         <button onClick={handleSubmit} className="bg-green-700 text-white hover:bg-blue-400 font-bold py-1 px-2 mt-3 mb-10 ml-2 rounded items-centerbg">Submit</button>
                     </form>
+                    <span className="text-white">{status.visible && <p>{status.message}</p>}</span>
                 </div>
                 <h1 className="font-custom text-white text-3xl pt-10 mb-5">Player List</h1>
                 <ul className="font-custom text-white text-center text-2xl h-72">
@@ -200,13 +214,13 @@ function Minigame () {
                 }
                 {players[6] &&
                  <div>
-                    <div>{players[6].name}: {players[5].finalScore}</div>
+                    <div>7th: {players[6].name}: {players[5].finalScore}</div>
 
                 </div> 
                 }
                 {players[7] &&
                  <div>
-                    <div>{players[7].name}: {players[7].finalScore}</div>
+                    <div>8th: {players[7].name}: {players[7].finalScore}</div>
                 </div> 
                 }
 
