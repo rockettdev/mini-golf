@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 
 function Home () {
 
+    // State Storage
+
     const [loginData, setLoginData] = useState({ email: '', password: '' });
     const [loginCompletion, setLoginCompletion] = useState('')
     const navigate = useNavigate();    
@@ -19,6 +21,8 @@ function Home () {
             [name]: value
         });
     }
+
+    // Sends POST request with data to the Router to be verified, if the email and password is verified, a response is given and a login token is stored in the users browser storage
 
     const login = (e) => {
         e.preventDefault();

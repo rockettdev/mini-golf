@@ -5,6 +5,7 @@ function Settings() {
 
     const navigate = useNavigate();
 
+    // Clears all local storage including the login token, thus logging out the user
 
     const logout = () => {
         localStorage.clear();

@@ -8,7 +8,11 @@ const loginUser = async (req, res) => {
 
     const { email, password } = req.body 
 
+    // Queries the database to find one matching email
+
     const userSearch = await schemas.Users.findOne({email: email})
+
+    // Returns a 401 status with an error code as a response
 
     if(!userSearch) {
         return res.status(401).json({ e: "User Not Found"})

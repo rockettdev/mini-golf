@@ -5,6 +5,8 @@ import stats from '../../Assets/stats.png'
 import leaderboard from '../../Assets/leaderboard.png'
 import { useEffect } from "react"
 
+// Retrieves Username from local storage to display it on the main menu
+
 let user = localStorage.getItem("user")
 
 function Portal () {

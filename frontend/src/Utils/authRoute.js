@@ -8,6 +8,8 @@ function AuthRoute({ element }) {
   useEffect(() => {
     const token = localStorage.getItem("token")
 
+    // Prevents user from accessing any progressive pages if they don't have a localStorage token
+
     if(!token) {
       navigate('/')
     }
