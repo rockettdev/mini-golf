@@ -68,6 +68,8 @@ function Minigame () {
             setStatus({ message: 'Please enter a valid name.', visible: true })
             return; // Exit the function
         }
+
+        // if (name.length)
         
         // Dispatch action to add player
         dispatch({ type: ACTIONS.ADD_PLAYER, payload: { name: name } })

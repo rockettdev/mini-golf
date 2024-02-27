@@ -103,6 +103,8 @@ function UserRegister () {
                                 rounded mb-2" />
                 </div>
                 
+                    {/* Conditional Rendering for API Responses */}
+
                     {registerCompletion.status === undefined && <p className="text-center text-white text-sm"><span className="font-semibold">Already Have an Account?</span> <Link to="/"><b>Log In</b></Link></p>} 
                     {registerCompletion.status === 200 && <p className="text-center text-green-500 font-semibold text-base">Account Successfully Created! <Link to="/">Log In</Link></p>}
                     {registerCompletion.status === 403 && <p className="text-center text-red-700 font-semibold text-base">Email Already In Use</p>}

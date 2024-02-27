@@ -15,6 +15,9 @@ function AuthRoute({ element }) {
     }
   }, [location])
 
+
+
+
   return element;
 }
 
