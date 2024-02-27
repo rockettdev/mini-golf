@@ -4,21 +4,29 @@ import Playerlistmap from "../../Utils/playerListMap";
 
 let id = 0
 
+// Reducer Score Counter functions
+
 export const ACTIONS = {
     ADD_PLAYER: 'add-player',
     INCREMENT_SCORE: 'increment-score',
     DECREMENT_SCORE: 'decrement-score'
 }
 
+// Preset object data for each new player created
+
 function newPlayer(name) {
     return { id: id += 1, name: name, hole1: 0, hole2: 0, hole3: 0, hole4: 0, hole5: 0, hole6: 0, hole7: 0, hole8: 0, hole9: 0, hole10: 0, hole11: 0, hole12: 0, hole13: 0, hole14: 0, hole15: 0, hole16: 0, hole17: 0, hole18: 0, finalScore: 0}
 }
 
+// Reducer function to manage player scores
+
 function reducer(players, action) {
     // eslint-disable-next-line default-case
     switch (action.type) {
+        // Adds new player to the array using the spread operator in order to maintain all other player data
         case ACTIONS.ADD_PLAYER:
             return [...players, newPlayer(action.payload.name)]
+        // Maps the array to find the matching ID of the player attempting to increment their score, and increments the score for the current hole    
         case ACTIONS.INCREMENT_SCORE:
             return players.map(player => {
                 if (player.id === action.payload.id) {
@@ -26,6 +34,7 @@ function reducer(players, action) {
                 }
                 return player
             })
+        // Maps the array to find the matching ID of the player attempting to decrement their score, and decrements the score for the current hole    
         case ACTIONS.DECREMENT_SCORE:
             return players.map(player => {
                 if (player.id === action.payload.id) {
@@ -37,6 +46,8 @@ function reducer(players, action) {
 }
 
 function Minigame () {
+
+    // State storage
 
     const [status, setStatus] = useState({ message: '', visible: false })
     const [playerNameStatus, setPlayerNameStatus] = useState(false)
@@ -51,9 +62,9 @@ function Minigame () {
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        // Check if the name is blank
+        // Checks if the name is blank
         if (!name.trim()) {
-            // If blank, display an error message or perform any desired action
+            // If blank, sets state to the error message and sets visibility to true
             setStatus({ message: 'Please enter a valid name.', visible: true })
             return; // Exit the function
         }
@@ -69,6 +80,8 @@ function Minigame () {
     const startGame = () => {
         setPlayerNameStatus(true)
     }
+
+    // Calculates final score by adding each hole score into one variable
 
     const endGame = async () => {
         setHole(hole+1)
@@ -121,6 +134,7 @@ function Minigame () {
                                 rounded mt-6" />
                         <button onClick={handleSubmit} className="bg-green-700 text-white hover:bg-blue-400 font-bold py-1 px-2 mt-3 mb-10 ml-2 rounded items-centerbg">Submit</button>
                     </form>
+                    {/* If the status state is set to visible and a message exists then it will display */}
                     <span className="text-white">{status.visible && <p>{status.message}</p>}</span>
                 </div>
                 <h1 className="font-custom text-white text-3xl pt-10 mb-5">Player List</h1>
@@ -147,6 +161,7 @@ function Minigame () {
                     </ul>
                 </div>
                 <div className="grid-flow-col mt-10 text-lg font-custom text-white">
+                    {/* Conditionally renders different elements based on the hole number */}
                     {hole === 1 &&
                     <>
                         <button onClick={() => {setHole(hole+1)}} className="w-24 h-11 bg-green-700 rounded-lg">Next</button>
@@ -167,6 +182,7 @@ function Minigame () {
                 </div>
             </>
             }
+            {/* End game condition */}
             {playerNameStatus === true && hole === 19 &&
             <>
             <h1 className="font-custom text-white text-4xl pb-14">RESULTS</h1>
@@ -194,7 +210,7 @@ function Minigame () {
                 </div>
             </div>
 
-                {/* Checks if there were more than X amount of players to display the correct final leaderboard */}
+                {/* Conditionally renders based on the correct amount of players to display the final leaderboard */}
 
             {players[3] && 
 
