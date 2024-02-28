@@ -15,5 +15,9 @@ const {
 } = require('../controllers/getUser')
 router.post('/login', getUser)
 
+const {
+    submitGame
+} = require('../controllers/submitGame')
+router.post('/submitGame', submitGame)
 
 module.exports = router

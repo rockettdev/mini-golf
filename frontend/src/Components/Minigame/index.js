@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import Playerlistmap from "../../Utils/playerListMap";
 
 let id = 0
+let userId = localStorage.getItem("id")
 
 // Reducer Score Counter functions
 
@@ -54,6 +55,7 @@ function Minigame () {
     const [name, setName] = useState('')
     const [players, dispatch] = useReducer(reducer, [])
     const [hole, setHole] = useState(1)
+    const [gameCompletion, setGameCompletion] = useState('')
     const currentHole = `hole${hole}`
     const navigate = useNavigate();
 
@@ -69,7 +71,11 @@ function Minigame () {
             return; // Exit the function
         }
 
-        // if (name.length)
+        if (name.length > 12) {
+            // If character is more than 12 characters, sets state to the error message and sets visibility to true
+            setStatus({ message: 'Player Name Too Long', visible: true })
+            return; // Exit the function
+        }
         
         // Dispatch action to add player
         dispatch({ type: ACTIONS.ADD_PLAYER, payload: { name: name } })
@@ -113,8 +119,23 @@ function Minigame () {
         players.sort((player1, player2) => player1.finalScore - player2.finalScore);
     }
 
+    // prepares the data for sending to the DB
+    const packet = { players, userId }
+
     const submitResults = () => {
-        navigate("/portal")
+
+        fetch('http://localhost:4000/user/submitGame', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+              },
+            body: JSON.stringify(packet)
+          })
+          .then(res => {
+            setGameCompletion(res)
+           return res.json()
+        })
+        .then(() => navigate('/portal'))
     }
 
     return (

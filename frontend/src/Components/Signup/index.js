@@ -8,6 +8,8 @@ function UserRegister () {
     const [formData, setFormData] = useState({ email: '', username: '', password: '' });
     const [registerCompletion, setRegisterCompletion] = useState('')
     const [loginCompletion, setLoginCompletion] = useState('')
+    const [gameCompletion, setGameCompletion] = useState('')
+
     const navigate = useNavigate();    
 
     const handleChange = (e) => {
