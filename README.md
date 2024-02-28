@@ -27,8 +27,7 @@ This project was developed to provide a solution to small Mini Golfing businesse
 - Tracks up to 8 Guests' Scores
 - Calculates Final Scores and Displays a leaderboard
 - Location Selector (Soon)
-- Career Stats (Soon)
-- Leaderboards (Soon)
+- Lifetime Stats (Finished)
 
 
 ## Screenshots
