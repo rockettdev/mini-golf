@@ -32,11 +32,12 @@ This project was developed to provide a solution to small Mini Golfing businesse
 
 ## Screenshots
 
-<p float="left">
-  <img src="https://ibb.co/ZR3g7YnV&=&format=webp&quality=lossless&width=418&height=905" height="600" />
-  <img src="https://ibb.co/Xfv6X0Yx&=&format=webp&quality=lossless" height="600" /> 
+<p align="left">
+  <img src="https://i.ibb.co/ZR3g7YnV/score.png" alt="Score screen" height="600" />
+  <img src="https://i.ibb.co/Xfv6X0Yx/app.png" alt="App screen" height="600" />
 </p>
-<p float="left">
-  <img src="https://ibb.co/wrCLgTDS&=&format=webp&quality=lossless&width=408&height=905" height="600" />
-  <img src="https://ibb.co/Y4j6LTJ5&=&format=webp&quality=lossless&width=408&height=905" height="600" />
-  </p>
+
+<p align="left">
+  <img src="https://i.ibb.co/wrCLgTDS/login.png" alt="Login screen" height="600" />
+  <img src="https://i.ibb.co/Y4j6LTJ5/app2.png" alt="App screen" height="600" />
+</p>
