@@ -32,11 +32,11 @@ This project was developed to provide a solution to small Mini Golfing businesse
 ## Screenshots
 
 <p align="left">
+  <img src="frontend/assets/login.png" alt="Login screen" width="400" />
+  <img src="frontend/assets/menu.png" alt="Menu screen" width="400" />
+</p>
+<p align="left">
   <img src="frontend/assets/score.png" alt="Score screen" width="400" />
   <img src="frontend/assets/game.png" alt="Game screen" width="400" />
 </p>
 
-<p align="left">
-  <img src="frontend/assets/login.png" alt="Login screen" width="400" />
-  <img src="frontend/assets/menu.png" alt="Menu screen" width="400" />
-</p>
