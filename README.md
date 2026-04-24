@@ -33,11 +33,11 @@ This project was developed to provide a solution to small Mini Golfing businesse
 ## Screenshots
 
 <p align="left">
-  <img src="https://i.ibb.co/ZR3g7YnV/score.png" width="400" />
-  <img src="https://i.ibb.co/Xfv6X0Yx/image222.png" width="400" />
+  <img src="./assets/screenshot/score.png" alt="Score screen" width="400" />
+  <img src="./assets/screenshot/game.png" alt="Game screen" width="400" />
 </p>
 
 <p align="left">
-  <img src="https://i.ibb.co/wrCLgTDS/login.png" width="400" />
-  <img src="https://i.ibb.co/Y4j6LTJ5/image3.png" width="400" />
+  <img src="./assets/screenshot/login.png" alt="Login screen" width="400" />
+  <img src="./assets/screenshot/menu.png" alt="Menu screen" width="400" />
 </p>
